@@ -21,4 +21,4 @@ services:
     working_dir: /app
     command: npm run dev
     env_file:
-      - .Food-Delivery/backend/.env
+      - /backend/.env
