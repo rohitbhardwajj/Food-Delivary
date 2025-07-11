@@ -27,7 +27,7 @@ const Navbar = ({ setShowLogin }) => {
           onClick={() => setMenu("home")}
           className={menu === "home" ? "active" : ""}
         >
-          home
+          home 
         </Link>
         <a
           href="#explore-menu"

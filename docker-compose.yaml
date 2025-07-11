@@ -7,18 +7,22 @@ services:
       - "5173:5173"
     volumes:
       - ./frontend:/app
-      - /app/node_modules
+      - frontend_node_modules:/app/node_modules
     working_dir: /app
     command: npm run dev
 
-  backend:
+  backend:  # <- yaha galti thi, ab thik hai
     build: ./backend
-    ports:
-      - "5000:5000"
     volumes:
       - ./backend:/app
-      - /app/node_modules
+      - backend_node_modules:/app/node_modules
     working_dir: /app
+    ports:
+      - "5000:5000"
     command: npm run dev
     env_file:
-      - /backend/.env
+      - ./backend/.env
+
+volumes:
+  backend_node_modules:
+  frontend_node_modules:
